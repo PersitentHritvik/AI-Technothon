@@ -1,1 +1,30 @@
+name: Release Notes Generation
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate_release_notes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          repository: microsoft/vscode
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run first script
+        run: python get_commits.py
+
+      - name: Run second script
+        run: python release_notes_generator.py
