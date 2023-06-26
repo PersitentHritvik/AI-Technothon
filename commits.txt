@@ -1,0 +1,106 @@
+cleanup: remove unused code (#185938)
+diff editor refactoring (#185928)
+Add codeql comments and small fix (#185931)
+Prevent showing installable extensions till ready (#185930)
+Unify remote menu and start entry items for desktop (#185908)
+
+* Unify remote menu and start entry items for desktop
+
+* Clean up code
+
+* Move remoteStartEntry to be web workbench contrib
+Merge pull request #185925 from microsoft/revert-185812-merogge/workspace-tasks
+
+Revert "Revert "Fix accidently starting all onTaskType extensions when running a build command""
+reorder navigation/execute toolbar group (#185923)
+Revert "Revert "Fix accidently starting all onTaskType extensions when running a build command""
+Merge pull request #185907 from microsoft/merogge/mode-prompt
+
+fix fish shell integration problems
+Try to request workspace content caching on commit (#185920)
+
+For #175972
+
+Here's what believe is happening:
+
+- Workspace opens. We download the archive for the current commit
+- User makes a commit
+- The commit has now changed, which invalidates the archive. However TS doesn't know this (all the uris seem to stay the same). This means that we silently start going to the network again on file system operations
+
+To fix this, we're going to try re-requesting the archive when a file system change event is fired for the workspace root. This should happen when a commit is made
+Declare experimental Share setting in settings UI (#185917)
+events: improve emitter performance (#185889)
+fix #185750
+Merge pull request #185798 from microsoft/aamunger/saveAllScratchpad
+
+include scratchpads in saveAll action on shutdown
+Make webviewView actions always visible (#185864)
+Merge pull request #185900 from microsoft/hediet/b/sporting-flamingo
+
+Don't render revert arrows for readonly files
+isModified unit test
+remove unneeded variable
+added saveall untitled options tests
+Fixes CI
+Don't render revert arrows for readonly files
+Enables new diff editor by default (just for insiders) (#185899)
+fix: use the right scheme for new managed remote resources (#185897)
+
+Fixes #185886
+Removes diffEditorWidget2 trusted type, uses diffEditorWidget TT instead. (#185895)
+Merge branch 'main' into aamunger/saveAllScratchpad
+storage - `storeAll` and `external` (#185837)
+
+* Emit source in storage change event
+
+* Address some comments
+
+* Fix failed rename
+
+* Part -> Self
+
+* JSDoc for new param
+
+* Add tests
+
+* Fix tests
+
+* Switch from enum to boolean
+
+* Fix tests
+
+* first cut
+
+* adopt storeAll in more places
+
+* more adoptions
+
+* renames
+
+* more adoptions
+
+* extract interface
+
+* more renames
+
+* more tests
+
+* fix test
+
+* more tests
+
+* :lipstick: jsdoc
+
+---------
+
+Co-authored-by: Joyce Er <joyce.er@microsoft.com>
+Improves diff rendering in new diff editor (#185877)
+Merge pull request #185803 from microsoft/merogge/inline-chat-revamp
+
+improve inline chat accessibility
+Merge pull request #185784 from microsoft/tyriar/185139
+
+Fix :line:col in anything quick access when @ is in path
+Merge pull request #185873 from microsoft/tyriar/185256
+
+Prevent ptyhost channel timing out when startupDelay is set
