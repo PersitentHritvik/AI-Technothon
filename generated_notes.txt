@@ -1,0 +1,9 @@
+We are releasing a new version of Visual Studio Code that includes several major performance improvements.
+
+- Consolidated Remote Menus and Start Entry items on the Desktop version
+- Refactor Diff editor for improved performance
+- Added codeQL comments and small fix
+- Prevented the installation of extensions until they are ready to be installed
+- Unifies remote menu and start entry items for Desktop
+- Reordered navigation/execute toolbar group
+- Move remoteStartEntry to be web workbench
